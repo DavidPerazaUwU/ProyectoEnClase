@@ -1,68 +1,62 @@
 package co.edu.uco.crosscutting.util.numeric;
 
-import static co.edu.uco.crosscutting.util.object.UtilObject.getUtilObject;
+
 
 public class UtilNumeric {
-
+	
 	private static final UtilNumeric INSTANCE = new UtilNumeric();
-	private static final Byte ZERO = 0;
-
-	private UtilNumeric() {
+	private static Byte ZERO = 0
+	
+	private UtilNumeric(){
 
 	}
-
-	public static UtilNumeric getUtilNumeric() {
-		return INSTANCE;
+	
+	public static UtilNumeric getUtilNumeri() {
+		return INSTANCE;  
 	}
-
-	public <T extends Number> T getDefault(T value, T defaultValue) {
-		return getUtilObject().getDefault(value, defaultValue);
+	
+	public <T extends Number>T getDefault(T value, T defaultValue){
+		return getUtilObject().getDefault(value, defaultvalue);
 	}
-
-	public <T extends Number> Number getDefault(T value) {
+	
+	public <T extends Number>T getDefault(T value, T defaultValue){
 		return getDefault(value, ZERO);
 	}
-
-	public <T extends Number> boolean isGreaterThan(T oneValue, T twoValue) {
-		return getDefault(oneValue).doubleValue() > getDefault(twoValue).doubleValue();
+	
+	public <T extends Number >boolean IsGreaterThan(T oneValue, T twoValue) {
+		return getUtilObject().getDefault(oneValue, 0).doubleValue()>getUtilObject().getDefault(twoValue, 0).doubleValue();
 	}
-
-	public <T extends Number> boolean isLessThan(T oneValue, T twoValue) {
-		return getDefault(oneValue).doubleValue() < getDefault(twoValue).doubleValue();
+	
+	public <T extends Number >boolean IsLessThan(T oneValue, T twoValue) {
+		return getUtilObject().getDefault(oneValue, 0).doubleValue()<getUtilObject().getDefault(twoValue, 0).doubleValue();
+		}
+	
+	public <T extends Number >boolean IsEqualThan(T oneValue, T twoValue) {
+		return getUtilObject().getDefault(oneValue, 0).doubleValue() ==getUtilObject().getDefault(twoValue, 0).doubleValue();
 	}
-
-	public <T extends Number> boolean isEqualThan(T oneValue, T twoValue) {
-		return getDefault(oneValue).doubleValue() == getDefault(twoValue).doubleValue();
+	
+	public <T extends Number >boolean IsGreaterOrEqualThan(T oneValue, T twoValue) {
+		return isGreaterThan(oneValue, twoValue)|| isEqualThan(oneValue, twoValue);
 	}
-
-	public <T extends Number> boolean isGreaterOrEqualThan(T oneValue, T twoValue) {
-		return isGreaterThan(oneValue, twoValue) || isEqualThan(oneValue, twoValue);
-	}
-
-	public <T extends Number> boolean isLessOrEqualThan(T oneValue, T twoValue) {
+	
+	public <T extends Number >boolean IsLessOrEqualThan(T oneValue, T twoValue) {
 		return getDefault(oneValue).doubleValue() <= getDefault(twoValue).doubleValue();
 	}
 
-	public <T extends Number> boolean isDifferentThan(T oneValue, T twoValue) {
+	public <T extends Number >boolean IsDifferentThan(T oneValue, T twoValue) {
 		return !isEqualThan(oneValue, twoValue);
 	}
-
-	public <T extends Number> boolean isBetween(T value, T initialRange, T finalRange, boolean includeInitialRange, boolean includeFinalRange) {
-
-		return (includeInitialRange ? isGreaterOrEqualThan(value, initialRange) : isGreaterThan(value, initialRange)) && (includeFinalRange ? isLessOrEqualThan(value, finalRange) : isLessThan(value, finalRange));
+	
+	public <T extends Number >boolean IsBetween(T value, T initialiRange, T finalRange,
+			boolean includeInialRange, boolean includeRFinalRanfe) {
+		 return includeInialRange
+                ? isGreatherOrEqualThan(value, initialRange)
+                : isGreatherThan(value, initialRange)
+                &&
+                includeFinalRenge
+                ?isLessOrEqualThan(value, initialRange);
+                :isLessThan(value, finalRange);
 	}
+}	
 
-	public <T extends Number> boolean isBetweenIncludeRanges(T value, T initialRange, T finalRange) {
-
-		return isBetween(value, initialRange, finalRange, true, true);
-	}
-
-	public <T extends Number> boolean isPositive(T value) {
-		return isGreaterOrEqualThan(value, ZERO);
-	}
-
-	public <T extends Number> boolean isNegative(T value) {
-		return !isPositive(value);
-	}
-
-}
+	
