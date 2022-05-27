@@ -1,29 +1,28 @@
 package co.edu.uco.crosscutting.util.text;
 
-import co.edu.uco.crosscutting.util.object.UtilObject;
+import static co.edu.uco.crosscutting.util.object.UtilObject.getUtilObject;
 
 public class UtilText {
-	
-	public static final String EMPTY ="";
-	private static UtilObject getDefaultObject;
-	private UtilText() {	
-	}
-	
-	public static boolean isNull(String value) {
-		getUtilObject();
-		return UtilObject.isNull(value);
-	}
-	
-	private static void getUtilObject() {
-		// TODO Auto-generated method stub
-		
+
+	public static final String EMPTY = "";
+
+	private UtilText() {
 	}
 
-	private static String getDefault(String value){
-		return getDefaultObject.getDefault(value, EMPTY);
+	public static boolean isNull(String value) {
+		return getUtilObject().isNull(value);
 	}
-	
+
+	public static String getDefault(String value, String defaultValue) {
+		return getUtilObject().getDefault(value, defaultValue);
+	}
+
+	public static String getDefault(String value) {
+		return getDefault(value, EMPTY);
+	}
+
 	public static String trim(String value) {
-		return getDefault(value).trim(); 
+		return getDefault(value).trim();
 	}
+
 }

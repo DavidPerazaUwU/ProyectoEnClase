@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="enu/samples/adaptive"/>
+	<classpathentry kind="src" path="enu/samples/alwaysencrypted"/>
+	<classpathentry kind="src" path="enu/samples/azureactivedirectoryauthentication"/>
+	<classpathentry kind="src" path="enu/samples/connections"/>
+	<classpathentry kind="src" path="enu/samples/constrained"/>
+	<classpathentry kind="src" path="enu/samples/dataclassification"/>
+	<classpathentry kind="src" path="enu/samples/datatypes"/>
+	<classpathentry kind="src" path="enu/samples/resultsets"/>
+	<classpathentry kind="src" path="enu/samples/sparse"/>
+	<classpathentry kind="lib" path="enu/mssql-jdbc-10.2.1.jre11.jar"/>
+	<classpathentry kind="lib" path="enu/mssql-jdbc-10.2.1.jre17.jar"/>
+	<classpathentry kind="lib" path="enu/mssql-jdbc-10.2.1.jre8.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
