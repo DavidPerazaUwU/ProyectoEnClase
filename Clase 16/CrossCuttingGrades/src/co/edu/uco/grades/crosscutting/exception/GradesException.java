@@ -30,15 +30,15 @@ public class GradesException extends GeneralException {
 		return new GradesException(null, technicalMessage, rootException, ExceptionType.TECHNICAL, location);
 	}
 
-	public static GradesException buildTechnicalDataException1(String technicalMessage) {
+	public static GradesException buildTechnicalDataException(String technicalMessage) {
 		return new GradesException(null, technicalMessage, null, ExceptionType.TECHNICAL, ExceptionLocation.DATA);
 	}
 	
 	public static GradesException buildTechnicalDataException(String businessMessage) {
 		return new GradesException(null, technicalMessage, null, ExceptionType.TECHNICAL, ExceptionLocation.DATA);
 
-	public static GradesException buildBusinessLogicException(String business) {
-		return new GradesException(business, null, null, ExceptionType.BUSINESS, ExceptionLocation.DATA);
+	public static GradesException buildBsinessLogicException(String business) {
+		return new GradesException(buseinessMessage, null, null, ExceptionType.BUSINESS, ExceptionLocation.DATA);
 	}
 	
 	public static GradesException buildTechnicalBusinessLogicException(String technicalMessage) {

@@ -1,4 +1,4 @@
-Rpackage co.edu.uco.grades.dto;
+package co.edu.uco.grades.dto;
 
 public class IdTypeDTO {
 
